@@ -136,6 +136,7 @@
 (require 'init-org)
 (require 'init-ido)
 (require 'init-iy-go-to-char)
+(require 'init-haskell)
 
 (load-theme theme-to-load t)
 
