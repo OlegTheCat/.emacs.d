@@ -126,7 +126,9 @@
 (package-install-if-not-present 'gotham-theme)
 (package-install-if-not-present 'solarized-theme)
 (package-install-if-not-present 'zenburn-theme)
-(setq theme-to-load 'zenburn)
+(setq theme-to-load 'solarized-light)
+
+(setq-default indent-tabs-mode nil)
 
 (require 'init-auto-complete)
 (require 'init-clojure)
