@@ -121,7 +121,6 @@
 
 (package-install-if-not-present 'ido-completing-read+)
 (package-install-if-not-present 'magit)
-(package-install-if-not-present 'magit-svn)
 
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (package-install-if-not-present 'gotham-theme)
