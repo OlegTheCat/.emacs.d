@@ -1,13 +1,18 @@
 (require-package 'haskell-mode)
 (require-package 'ghc)
-(require-package 'company-ghc)
+;; (require-package 'company-ghc)
+(require-package 'ac-haskell-process)
+(require-package 'hi2)
 
 ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
+;; (add-hook 'haskell-mode-hook 'haskell-indentation)
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
-(add-hook 'haskell-mode-hook #'hindent-mode)
+;; (add-hook 'haskell-mode-hook 'hindent-mode)
+
+(setq hi2-show-indentations nil)
 
 (eval-after-load 'haskell-mode
           '(define-key haskell-mode-map [f8] 'haskell-navigate-imports))
@@ -52,11 +57,22 @@
 (custom-set-variables '(haskell-process-type 'cabal-repl))
 
 
-(require 'company)
-(add-hook 'haskell-mode-hook 'global-company-mode)
+;; (require 'company)
+;; (add-hook 'haskell-mode-hook 'global-company-mode)
 
-(add-to-list 'company-backends 'company-ghc)
-(custom-set-variables '(company-ghc-show-info t))
+;; (add-to-list 'company-backends 'company-ghc)
+;; (custom-set-variables '(company-ghc-show-info t))
 
+(add-hook 'interactive-haskell-mode-hook 'ac-haskell-process-setup)
+(add-hook 'haskell-interactive-mode-hook 'ac-haskell-process-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'haskell-interactive-mode))
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (add-to-list 'completion-at-point-functions 'auto-complete))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-to-list 'ac-modes 'haskell-interactive-mode)
+(add-hook 'haskell-interactive-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'haskell-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 (provide 'init-haskell)
