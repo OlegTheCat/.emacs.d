@@ -23,7 +23,6 @@
   (bk-kill-buffers "nrepl*"))
 
 (require-package 'cider)
-(require-package 'auto-complete)
 (require-package 'ac-cider)
 (require-package 'clj-refactor)
 
