@@ -131,6 +131,7 @@
 (setq-default indent-tabs-mode nil)
 
 (require 'init-auto-complete)
+(require 'init-company)
 (require 'init-clojure)
 (require 'init-common-lisp)
 (require 'init-paredit)
