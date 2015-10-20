@@ -140,6 +140,7 @@
 (require 'init-ido)
 (require 'init-iy-go-to-char)
 (require 'init-haskell)
+(require 'init-god-mode)
 
 (load-theme theme-to-load t)
 

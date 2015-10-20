@@ -1,3 +1,6 @@
 [submodule "iy-go-to-char"]
 	path = iy-go-to-char
 	url = https://github.com/doitian/iy-go-to-char.git
+[submodule "god-mode"]
+	path = god-mode
+	url = https://github.com/chrisdone/god-mode.git
