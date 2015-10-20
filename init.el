@@ -129,6 +129,7 @@
 (setq theme-to-load 'solarized-light)
 
 (setq-default indent-tabs-mode nil)
+(setq inhibit-startup-message t)
 
 (require 'init-auto-complete)
 (require 'init-company)
