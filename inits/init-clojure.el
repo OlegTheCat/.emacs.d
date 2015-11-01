@@ -11,16 +11,15 @@
   (context 2))
 
 (require 'cl)
-(defun bk-kill-buffers (regexp)
-  "Kill buffers matching REGEXP without asking for confirmation."
-  (interactive "sKill buffers matching this regular expression: ")
-  (flet ((kill-buffer-ask (buffer) (kill-buffer buffer)))
-    (kill-matching-buffers regexp)))
 
 (defun kill-cider-buffers ()
   (interactive)
-  (bk-kill-buffers "cider")
-  (bk-kill-buffers "nrepl*"))
+  (flet ((kill-buffer-ask (buffer) (kill-buffer buffer)))
+    (let ((kill-buffer-query-functions
+           (remq 'process-kill-buffer-query-function
+                 kill-buffer-query-functions)))
+      (kill-matching-buffers "cider")
+      (kill-matching-buffers "nrepl*"))))
 
 (require-package 'cider)
 (require-package 'ac-cider)
