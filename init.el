@@ -131,6 +131,9 @@
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 
+;; Replace “yes or no” prompt with “y or n”
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (require 'init-auto-complete)
 (require 'init-company)
 (require 'init-clojure)
