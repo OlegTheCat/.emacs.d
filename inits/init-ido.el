@@ -18,9 +18,6 @@
 (require-package 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
 
-(require-package 'ido-ubiquitous)
-(ido-ubiquitous-mode 1)
-
 (require-package 'ido-vertical-mode)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
