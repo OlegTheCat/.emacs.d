@@ -23,7 +23,6 @@
 
 (require-package 'cider)
 (require-package 'ac-cider)
-(require-package 'clj-refactor)
 
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook 'ac-cider-setup)
@@ -42,5 +41,10 @@
 (add-hook 'clojure-mode-hook 'projectile-mode)
 
 (modify-syntax-entry ?- "w" clojure-mode-syntax-table)
+
+(require-package 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 (provide 'init-clojure)
