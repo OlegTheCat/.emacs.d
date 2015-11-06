@@ -96,7 +96,12 @@
 
 (require-package 'yasnippet)
 (require-package 'clojure-snippets)
+
 (require-package 'highlight-symbol)
+
+;; No more symbol count reports
+(defun highlight-symbol-count (&rest args) nil)
+
 
 (add-hook 'prog-mode-hook 'hl-line-mode)
 (add-hook 'prog-mode-hook 'show-paren-mode)
