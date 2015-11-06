@@ -135,10 +135,10 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (require-package 'aggressive-indent)
+(require-package 'hydra)
 
 (require 'init-auto-complete)
 (require 'init-company)
-(require 'init-hydra)
 (require 'init-clojure)
 (require 'init-common-lisp)
 (require 'init-paredit)
