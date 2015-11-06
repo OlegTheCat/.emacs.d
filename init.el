@@ -138,6 +138,7 @@
 
 (require 'init-auto-complete)
 (require 'init-company)
+(require 'init-hydra)
 (require 'init-clojure)
 (require 'init-common-lisp)
 (require 'init-paredit)
