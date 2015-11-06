@@ -13,4 +13,6 @@
 
 (modify-syntax-entry ?- "w" lisp-mode-syntax-table)
 
+(add-hook 'slime-mode-hook 'aggressive-indent-mode)
+
 (provide 'init-common-lisp)

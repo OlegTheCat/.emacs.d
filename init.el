@@ -134,6 +134,8 @@
 ;; Replace “yes or no” prompt with “y or n”
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(require-package 'aggressive-indent)
+
 (require 'init-auto-complete)
 (require 'init-company)
 (require 'init-clojure)

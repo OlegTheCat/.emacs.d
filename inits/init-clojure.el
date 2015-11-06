@@ -47,4 +47,8 @@
                                (clj-refactor-mode 1)
                                (cljr-add-keybindings-with-prefix "C-c C-m")))
 
+(setq cljr-magic-requires :prompt)
+
+(add-hook 'clojure-mode-hook 'aggressive-indent-mode)
+
 (provide 'init-clojure)
