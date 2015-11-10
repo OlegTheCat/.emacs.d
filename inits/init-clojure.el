@@ -10,17 +10,6 @@
   (ANY 2)
   (context 2))
 
-(require 'cl)
-
-(defun kill-cider-buffers ()
-  (interactive)
-  (flet ((kill-buffer-ask (buffer) (kill-buffer buffer)))
-    (let ((kill-buffer-query-functions
-           (remq 'process-kill-buffer-query-function
-                 kill-buffer-query-functions)))
-      (kill-matching-buffers "cider")
-      (kill-matching-buffers "nrepl*"))))
-
 (require-package 'cider)
 (require-package 'ac-cider)
 
