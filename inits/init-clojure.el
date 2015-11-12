@@ -11,15 +11,11 @@
   (context 2))
 
 (require-package 'cider)
-(require-package 'ac-cider)
 
-(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-(add-hook 'cider-mode-hook 'ac-cider-setup)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-mode))
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-repl-mode))
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+(add-hook 'cider-repl-mode-hook #'company-quickhelp-mode)
+(add-hook 'cider-mode-hook #'company-quickhelp-mode)
 
 (setq cider-show-error-buffer nil)
 (setq nrepl-log-messages t)

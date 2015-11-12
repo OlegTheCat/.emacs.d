@@ -1,5 +1,4 @@
 (require-package 'auto-complete)
-(global-auto-complete-mode)
 (ac-linum-workaround)
 
 (setq ac-auto-start nil)
