@@ -110,7 +110,6 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 (add-hook 'prog-mode-hook 'prettify-symbols-mode)
-(add-hook 'prog-mode-hook 'line-number-mode)
 (add-hook 'prog-mode-hook 'column-number-mode)
 
 (setq highlight-symbol-idle-delay 0.5)
