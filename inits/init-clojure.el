@@ -14,8 +14,6 @@
 
 (add-hook 'cider-repl-mode-hook #'company-mode)
 (add-hook 'cider-mode-hook #'company-mode)
-(add-hook 'cider-repl-mode-hook #'company-quickhelp-mode)
-(add-hook 'cider-mode-hook #'company-quickhelp-mode)
 
 (setq cider-show-error-buffer nil)
 (setq nrepl-log-messages t)
