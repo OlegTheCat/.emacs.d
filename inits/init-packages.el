@@ -1,5 +1,7 @@
 (require 'package)
 
+(defvar init-packages--package-contents-refreshed nil)
+
 (add-to-list 'package-archives
 	     '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 (add-to-list 'package-archives
@@ -15,7 +17,9 @@
 
 (defun package-install-if-not-present (package-symbol)
   (unless (package-installed-p package-symbol)
-    (package-refresh-contents)
+    (unless init-packages--package-contents-refreshed
+      (package-refresh-contents)
+      (setq init-packages--package-contents-refreshed t))
     (package-install package-symbol)))
 
 (provide 'init-packages)
