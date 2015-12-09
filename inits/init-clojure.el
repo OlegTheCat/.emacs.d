@@ -32,7 +32,12 @@
 
 (setq cljr-magic-requires :prompt)
 
-(require-package 'flycheck-clojure)
+;; (require-package 'flycheck-clojure)
+;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
+;; (setq flycheck-disabled-checkers (list 'clojure-cider-typed
+;;                                        'clojure-cider-kibit))
+;; ;; TODO: get rid of global mode
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
