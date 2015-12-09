@@ -38,6 +38,9 @@
 ;;                                        'clojure-cider-kibit))
 ;; ;; TODO: get rid of global mode
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
+;;
+;; (eval-after-load 'flycheck
+;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
