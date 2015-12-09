@@ -32,6 +32,8 @@
 
 (setq cljr-magic-requires :prompt)
 
+(require-package 'flycheck-clojure)
+
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 (provide 'init-clojure)
