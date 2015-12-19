@@ -158,6 +158,7 @@
 (require 'init-iy-go-to-char)
 (require 'init-haskell)
 (require 'init-elixir)
+(require 'init-html)
 
 ;; (require 'init-god-mode)
 
