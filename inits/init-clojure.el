@@ -36,9 +36,9 @@
 ;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
 ;; (setq flycheck-disabled-checkers (list 'clojure-cider-typed
 ;;                                        'clojure-cider-kibit))
-;; ;; TODO: get rid of global mode
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
-;;
+
+;; (add-hook 'cider-mode-hook #'flycheck-mode)
+
 ;; (eval-after-load 'flycheck
 ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 

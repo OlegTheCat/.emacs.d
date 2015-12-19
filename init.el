@@ -17,7 +17,9 @@
 
 (defun cddev ()
   (interactive)
-  (cd "/media/files/Oleg/devel/"))
+  (let ((devel-dir (getenv "DEVEL_DIR")))
+    (cd (or devel-dir
+            "~/devel"))))
 
 (defun cds ()
   (interactive)
@@ -142,8 +144,8 @@
 (require-package 'hydra)
 (require-package 'fill-column-indicator)
 (require-package 'string-edit)
-;; (require-package 'flycheck)
-;; (require-package 'flycheck-pos-tip)
+(require-package 'flycheck)
+(require-package 'flycheck-pos-tip)
 
 (require 'init-auto-complete)
 (require 'init-company)
