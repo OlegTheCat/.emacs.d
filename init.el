@@ -142,7 +142,6 @@
 
 (require-package 'aggressive-indent)
 (require-package 'hydra)
-(require-package 'fill-column-indicator)
 (require-package 'string-edit)
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
