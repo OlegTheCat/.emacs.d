@@ -15,7 +15,7 @@
 (add-hook 'cider-repl-mode-hook #'company-mode)
 (add-hook 'cider-mode-hook #'company-mode)
 
-(setq cider-show-error-buffer nil)
+(setq cider-show-error-buffer t)
 (setq nrepl-log-messages t)
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
@@ -43,5 +43,6 @@
 ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
+(put-clojure-indent 'match 'defun)
 
 (provide 'init-clojure)
