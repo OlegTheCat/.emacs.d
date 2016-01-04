@@ -42,6 +42,10 @@
 ;; (eval-after-load 'flycheck
 ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
+(setq nrepl-hide-special-buffers t)
+
+(put-clojure-indent 'match 'defun)
+
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 (provide 'init-clojure)
