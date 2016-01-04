@@ -166,4 +166,6 @@
 
 (load custom-file 'noerror)
 
+(set-default-font "Inconsolata LGC-16")
+
 (provide 'init)
