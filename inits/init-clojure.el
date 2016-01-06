@@ -44,6 +44,8 @@
 
 (setq nrepl-hide-special-buffers t)
 
+(setq cider-repl-use-pretty-printing t)
+
 (put-clojure-indent 'match 'defun)
 
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
