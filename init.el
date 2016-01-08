@@ -11,6 +11,12 @@
   (other-window 1)
   (find-file "~/.emacs.d/init.el"))
 
+(defun find-init-clojure ()
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (find-file "~/.emacs.d/inits/init-clojure.el"))
+
 (defun source-dot-emacs ()
   (interactive)
   (load-file "~/.emacs.d/init.el"))
@@ -46,6 +52,7 @@
         (switch-to-buffer (other-buffer))))))
 
 (global-set-key (kbd "C-c e o") 'find-dot-emacs)
+(global-set-key (kbd "C-c e c") 'find-init-clojure)
 (global-set-key (kbd "C-c e s") 'source-dot-emacs)
 
 (menu-bar-mode -1)
