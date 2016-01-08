@@ -27,6 +27,8 @@
 (modify-syntax-entry ?* "w" clojure-mode-syntax-table)
 (modify-syntax-entry ?! "w" clojure-mode-syntax-table)
 (modify-syntax-entry ?: "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?> "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?< "w" clojure-mode-syntax-table)
 
 (require-package 'clj-refactor)
 (add-hook 'clojure-mode-hook (lambda ()
