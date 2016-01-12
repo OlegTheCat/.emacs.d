@@ -144,6 +144,8 @@
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 
+(global-auto-revert-mode 1)
+
 ;; Replace “yes or no” prompt with “y or n”
 (fset 'yes-or-no-p 'y-or-n-p)
 
