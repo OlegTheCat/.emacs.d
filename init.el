@@ -1,6 +1,8 @@
 (let ((default-directory user-emacs-directory))
   (normal-top-level-add-subdirs-to-load-path))
 
+(setq is-mac (equal system-type 'darwin))
+
 (setq custom-file "~/.emacs.d/custom.el")
 
 (require 'init-packages)
@@ -175,6 +177,7 @@
 
 (load custom-file 'noerror)
 
-(set-default-font "Inconsolata LGC-16")
+(when is-mac
+  (set-default-font "Inconsolata LGC-16"))
 
 (provide 'init)
