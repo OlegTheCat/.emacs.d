@@ -53,6 +53,7 @@
 (setq cider-repl-use-pretty-printing t)
 
 (put-clojure-indent 'match 'defun)
+(put-clojure-indent 'let-flow 'defun)
 
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
