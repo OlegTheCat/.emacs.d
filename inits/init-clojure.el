@@ -49,6 +49,7 @@
 ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 (setq nrepl-hide-special-buffers t)
+(setq nrepl-log-messages nil)
 
 (setq cider-repl-use-pretty-printing t)
 
