@@ -166,7 +166,6 @@
 (require 'init-c)
 (require 'init-org)
 (require 'init-ido)
-(require 'init-iy-go-to-char)
 (require 'init-haskell)
 (require 'init-elixir)
 (require 'init-html)
