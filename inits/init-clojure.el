@@ -24,6 +24,12 @@
 (add-hook 'clojure-mode-hook 'projectile-mode)
 
 (modify-syntax-entry ?- "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?* "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?! "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?? "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?: "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?> "w" clojure-mode-syntax-table)
+(modify-syntax-entry ?< "w" clojure-mode-syntax-table)
 
 (require-package 'clj-refactor)
 (add-hook 'clojure-mode-hook (lambda ()
@@ -42,7 +48,14 @@
 ;; (eval-after-load 'flycheck
 ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
-(add-hook 'clojure-mode-hook 'aggressive-indent-mode)
+(setq nrepl-hide-special-buffers t)
+(setq nrepl-log-messages nil)
+
+(setq cider-repl-use-pretty-printing t)
+
 (put-clojure-indent 'match 'defun)
+(put-clojure-indent 'let-flow 'defun)
+
+(add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 (provide 'init-clojure)

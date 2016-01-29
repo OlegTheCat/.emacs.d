@@ -1,6 +1,8 @@
 (let ((default-directory user-emacs-directory))
   (normal-top-level-add-subdirs-to-load-path))
 
+(setq is-mac (equal system-type 'darwin))
+
 (setq custom-file "~/.emacs.d/custom.el")
 
 (require 'init-packages)
@@ -10,6 +12,12 @@
   (split-window-right)
   (other-window 1)
   (find-file "~/.emacs.d/init.el"))
+
+(defun find-init-clojure ()
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (find-file "~/.emacs.d/inits/init-clojure.el"))
 
 (defun source-dot-emacs ()
   (interactive)
@@ -46,6 +54,7 @@
         (switch-to-buffer (other-buffer))))))
 
 (global-set-key (kbd "C-c e o") 'find-dot-emacs)
+(global-set-key (kbd "C-c e c") 'find-init-clojure)
 (global-set-key (kbd "C-c e s") 'source-dot-emacs)
 
 (menu-bar-mode -1)
@@ -137,6 +146,8 @@
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 
+(global-auto-revert-mode 1)
+
 ;; Replace “yes or no” prompt with “y or n”
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -154,7 +165,6 @@
 (require 'init-c)
 (require 'init-org)
 (require 'init-ido)
-(require 'init-iy-go-to-char)
 (require 'init-haskell)
 (require 'init-elixir)
 (require 'init-html)
@@ -164,5 +174,8 @@
 (load-theme theme-to-load t)
 
 (load custom-file 'noerror)
+
+(when is-mac
+  (set-default-font "Inconsolata LGC-16"))
 
 (provide 'init)
