@@ -153,7 +153,6 @@
 
 (require-package 'aggressive-indent)
 (require-package 'hydra)
-(require-package 'fill-column-indicator)
 (require-package 'string-edit)
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
@@ -166,7 +165,6 @@
 (require 'init-c)
 (require 'init-org)
 (require 'init-ido)
-(require 'init-iy-go-to-char)
 (require 'init-haskell)
 (require 'init-elixir)
 (require 'init-html)

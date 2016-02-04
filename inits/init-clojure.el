@@ -15,7 +15,7 @@
 (add-hook 'cider-repl-mode-hook #'company-mode)
 (add-hook 'cider-mode-hook #'company-mode)
 
-(setq cider-show-error-buffer nil)
+(setq cider-show-error-buffer t)
 (setq nrepl-log-messages t)
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
