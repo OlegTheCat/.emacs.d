@@ -54,6 +54,7 @@
 (setq nrepl-log-messages nil)
 
 (setq cider-repl-use-pretty-printing t)
+(setq cider-repl-history-file "~/.emacs.d/cider-history")
 
 (put-clojure-indent 'match 'defun)
 (put-clojure-indent 'let-flow 'defun)
