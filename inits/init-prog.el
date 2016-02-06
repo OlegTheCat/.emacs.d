@@ -1,0 +1,12 @@
+(add-hook 'prog-mode-hook 'hl-line-mode)
+(add-hook 'prog-mode-hook 'show-paren-mode)
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'prog-mode-hook (lambda ()
+                            (interactive)
+                            (setq-local show-trailing-whitespace t)))
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'prog-mode-hook 'yas-minor-mode)
+(add-hook 'prog-mode-hook 'prettify-symbols-mode)
+(add-hook 'prog-mode-hook 'column-number-mode)
+
+(provide 'init-prog)

@@ -10,6 +10,8 @@
   (ANY 2)
   (context 2))
 
+(require-package 'clojure-snippets)
+
 (require-package 'cider)
 
 (add-hook 'cider-repl-mode-hook #'company-mode)

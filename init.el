@@ -1,10 +1,6 @@
 (let ((default-directory user-emacs-directory))
   (normal-top-level-add-subdirs-to-load-path))
 
-(setq is-mac (equal system-type 'darwin))
-
-(setq custom-file "~/.emacs.d/custom.el")
-
 (require 'init-packages)
 
 (defun find-dot-emacs ()
@@ -28,10 +24,6 @@
   (let ((devel-dir (getenv "DEVEL_DIR")))
     (cd (or devel-dir
             "~/devel"))))
-
-(defun cds ()
-  (interactive)
-  (cd "/media/files/Oleg/Studies/"))
 
 (defun iwb ()
   "indent whole buffer"
@@ -57,77 +49,13 @@
 (global-set-key (kbd "C-c e c") 'find-init-clojure)
 (global-set-key (kbd "C-c e s") 'source-dot-emacs)
 
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-
-(global-set-key (kbd "C-c r e") (lambda ()
-                                  (interactive)
-                                  (revert-buffer nil t)))
-
-(require-package 'undo-tree)
-(global-undo-tree-mode)
-
 (global-set-key (kbd "C-+") 'enlarge-window)
 (global-set-key (kbd "C-_") 'shrink-window)
 (global-set-key (kbd "C->") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-<") 'shrink-window-horizontally)
 
-(global-set-key (kbd "C-c w f") 'windmove-right)
-(global-set-key (kbd "C-c w b") 'windmove-left)
-(global-set-key (kbd "C-c w p") 'windmove-up)
-(global-set-key (kbd "C-c w n") 'windmove-down)
-
-
-(setq scroll-preserve-screen-position t)
-
-;; TODO
-;; (global-set-key (kbd "C-v")
-;;  (lambda () (interactive (next-line (/ (window-height (selected-window)) 2)))))
-
-;; (global-set-key (kbd "M-v")
-;;  (lambda () (interactive (previous-line (/ (window-height (selected-window)) 2)))))
-
-
-;; (defun window-half-height ()
-;;   (max 1 (/ (1- (window-height (selected-window))) 2)))
-
-;; (defun scroll-up-half ()
-;;      (interactive)
-;;      (scroll-up (window-half-height)))
-
-;; (defun scroll-down-half ()
-;;      (interactive)
-;;      (scroll-down (window-half-height)))
-
-;; (global-set-key (kbd "C-v") 'scroll-up-half)
-;; (global-set-key (kbd "M-v") 'scroll-down-half)
-
-(setq undo-limit 2000000)
-
 (require-package 'yasnippet)
-(require-package 'clojure-snippets)
-
 (require-package 'highlight-symbol)
-
-;; No more symbol count reports
-(defun highlight-symbol-count (&rest args) nil)
-
-
-(add-hook 'prog-mode-hook 'hl-line-mode)
-(add-hook 'prog-mode-hook 'show-paren-mode)
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'prog-mode-hook (lambda () (interactive) (setq-local show-trailing-whitespace t)))
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'prog-mode-hook 'yas-minor-mode)
-(add-hook 'prog-mode-hook 'prettify-symbols-mode)
-(add-hook 'prog-mode-hook 'column-number-mode)
-
-(setq highlight-symbol-idle-delay 0.5)
-(setq show-paren-style 'parenthesis)
-
-(global-set-key (kbd "C-x C-p") nil)
-(global-visual-line-mode t)
 
 (require-package 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -137,26 +65,15 @@
 (package-install-if-not-present 'ido-completing-read+)
 (package-install-if-not-present 'magit)
 
-(setq custom-theme-directory "~/.emacs.d/themes/")
-(package-install-if-not-present 'gotham-theme)
-(package-install-if-not-present 'solarized-theme)
-(package-install-if-not-present 'zenburn-theme)
-(setq theme-to-load 'solarized-light)
-
-(setq-default indent-tabs-mode nil)
-(setq inhibit-startup-message t)
-
-(global-auto-revert-mode 1)
-
-;; Replace “yes or no” prompt with “y or n”
-(fset 'yes-or-no-p 'y-or-n-p)
-
 (require-package 'aggressive-indent)
 (require-package 'hydra)
 (require-package 'string-edit)
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
 
+(require 'init-appearance)
+(require 'init-defaults)
+(require 'init-prog)
 (require 'init-auto-complete)
 (require 'init-company)
 (require 'init-clojure)
@@ -169,13 +86,6 @@
 (require 'init-elixir)
 (require 'init-html)
 
-;; (require 'init-god-mode)
-
-(load-theme theme-to-load t)
-
 (load custom-file 'noerror)
-
-(when is-mac
-  (set-default-font "Inconsolata LGC-16"))
 
 (provide 'init)
