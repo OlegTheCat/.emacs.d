@@ -74,6 +74,19 @@
     (insert cider-cljs-repl)
     (cider-repl-return)))
 
+(defun cider-clear-output-all-repls ()
+  (interactive)
+  (let ((origin-buffer (current-buffer))
+        (connections (cider-connections)))
+    (mapc
+     (lambda (connection)
+       (switch-to-buffer connection)
+       (cider-repl-clear-buffer))
+     connections)
+    (switch-to-buffer origin-buffer)))
+
+(global-set-key (kbd "C-c M-o") #'cider-clear-output-all-repls)
+
 (global-set-key (kbd "C-c f r") #'cider-figwheel-repl)
 
 (provide 'init-clojure)
