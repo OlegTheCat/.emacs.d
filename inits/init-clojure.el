@@ -61,15 +61,17 @@
 
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
+(setq cider-cljs-repl "(do (require 'figwheel-sidecar.repl-api)
+                           (figwheel-sidecar.repl-api/start-figwheel!)
+                           (figwheel-sidecar.repl-api/cljs-repl))")
+
+;; manual starting cljs repl from nrepl session
 (defun cider-figwheel-repl ()
   (interactive)
   (save-some-buffers)
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
-    (insert "(require 'figwheel-sidecar.repl-api)
-             ;; prevent system map from pprinting
-             (do (figwheel-sidecar.repl-api/start-figwheel!) nil)
-             (figwheel-sidecar.repl-api/cljs-repl)")
+    (insert cider-cljs-repl)
     (cider-repl-return)))
 
 (global-set-key (kbd "C-c f r") #'cider-figwheel-repl)
