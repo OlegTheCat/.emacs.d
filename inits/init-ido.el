@@ -1,5 +1,7 @@
 (require 'ido)
 
+(package-install-if-not-present 'ido-completing-read+)
+
 (ido-mode 1)
 (ido-everywhere 1)
 
