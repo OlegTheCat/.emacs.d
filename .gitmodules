@@ -1,3 +1,6 @@
 [submodule "god-mode"]
 	path = god-mode
 	url = https://github.com/chrisdone/god-mode.git
+[submodule "persp-projectile"]
+	path = persp-projectile
+	url = https://github.com/bbatsov/persp-projectile.git
