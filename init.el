@@ -62,6 +62,7 @@
 
 (modify-syntax-entry ?- "w" emacs-lisp-mode-syntax-table)
 
+(package-install-if-not-present 'markdown-mode)
 (package-install-if-not-present 'magit)
 
 (require-package 'aggressive-indent)
