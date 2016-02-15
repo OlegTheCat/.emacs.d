@@ -56,7 +56,8 @@
 (put-clojure-indent 'match 'defun)
 (put-clojure-indent 'let-flow 'defun)
 
-(add-hook 'clojure-mode-hook 'aggressive-indent-mode)
+;; Disabled due to heavy lag
+;; (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 (setq cider-cljs-repl "(do (require 'figwheel-sidecar.repl-api)
                            (figwheel-sidecar.repl-api/start-figwheel!)
