@@ -11,6 +11,6 @@
 (load-theme theme-to-load t)
 
 (when is-mac
-  (set-default-font "Inconsolata LGC-16"))
+  (set-default-font "Inconsolata LGC-16" nil t))
 
 (provide 'init-appearance)
