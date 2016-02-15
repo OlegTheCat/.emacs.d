@@ -22,13 +22,6 @@
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
-(require-package 'projectile)
-(require-package 'perspective)
-(persp-mode)
-(require 'persp-projectile)
-
-(add-hook 'clojure-mode-hook 'projectile-mode)
-
 (modify-syntax-entry ?- "w" clojure-mode-syntax-table)
 (modify-syntax-entry ?* "w" clojure-mode-syntax-table)
 (modify-syntax-entry ?! "w" clojure-mode-syntax-table)

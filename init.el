@@ -71,6 +71,13 @@
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
 
+(require-package 'projectile)
+(require-package 'perspective)
+(persp-mode)
+(require 'persp-projectile)
+
+(require-package 'coffee-mode)
+
 (require 'init-appearance)
 (require 'init-defaults)
 (require 'init-prog)
