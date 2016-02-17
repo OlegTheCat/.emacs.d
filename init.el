@@ -76,6 +76,22 @@
 (persp-mode)
 (require 'persp-projectile)
 
+(defadvice switch-to-buffer (after persp-add-buffer-adv)
+  (persp-protect
+    (let ((curr-persp-name (persp-name persp-curr))
+          (buf (ad-get-arg 0)))
+      (when buf
+        (mapc
+         (lambda (frame)
+           (with-selected-frame frame
+             (when (member curr-persp-name (persp-names))
+               (with-perspective curr-persp-name
+                 (persp-add-buffer buf)))))
+         (frame-list))))))
+
+(persp-protect
+  (ad-activate 'switch-to-buffer))
+
 (require-package 'coffee-mode)
 
 (require 'init-appearance)
