@@ -76,6 +76,10 @@
 (persp-mode)
 (require 'persp-projectile)
 
+(defun projectile-manually-add-known-project (project-root)
+  (interactive "D")
+  (projectile-add-known-project project-root))
+
 ;; (defadvice switch-to-buffer (after persp-add-buffer-adv)
 ;;   (persp-protect
 ;;     (let ((curr-persp-name (persp-name persp-curr))
