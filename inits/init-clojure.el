@@ -39,6 +39,8 @@
 
 (setq cljr-magic-requires :prompt)
 
+(define-key clojure-mode-map (kbd "C-;") 'cljr-cycle-coll)
+
 ;; (require-package 'flycheck-clojure)
 ;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
 ;; (setq flycheck-disabled-checkers (list 'clojure-cider-typed
