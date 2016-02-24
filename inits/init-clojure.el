@@ -41,15 +41,20 @@
 
 (define-key clojure-mode-map (kbd "C-;") 'cljr-cycle-coll)
 
-;; (require-package 'flycheck-clojure)
-;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
-;; (setq flycheck-disabled-checkers (list 'clojure-cider-typed
-;;                                        'clojure-cider-kibit))
+(require-package 'flycheck-clojure)
+(eval-after-load 'flycheck '(flycheck-clojure-setup))
+(setq flycheck-disabled-checkers (list 'clojure-cider-typed
+                                       'clojure-cider-kibit))
 
-;; (add-hook 'cider-mode-hook #'flycheck-mode)
+(add-hook 'cider-mode-hook #'flycheck-mode)
 
-;; (eval-after-load 'flycheck
-;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+(defun cider-flycheck-eval (input callback)
+  "Send the request INPUT and register the CALLBACK as the response handler.
+Uses the tooling session, with no specified namespace."
+  (nrepl-request:eval input callback (cider-current-connection) (nrepl-current-tooling-session)))
+
+(eval-after-load 'flycheck
+  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 (setq nrepl-hide-special-buffers t)
 (setq nrepl-log-messages nil)
