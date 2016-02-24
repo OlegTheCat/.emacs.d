@@ -43,8 +43,8 @@
 
 (require-package 'flycheck-clojure)
 (eval-after-load 'flycheck '(flycheck-clojure-setup))
-(setq flycheck-disabled-checkers (list 'clojure-cider-typed
-                                       'clojure-cider-kibit))
+(setq-default flycheck-disabled-checkers (list 'clojure-cider-typed
+                                               'clojure-cider-kibit))
 
 (add-hook 'cider-mode-hook #'flycheck-mode)
 
