@@ -53,9 +53,6 @@
 Uses the tooling session, with no specified namespace."
   (nrepl-request:eval input callback (cider-current-connection) (nrepl-current-tooling-session)))
 
-(eval-after-load 'flycheck
-  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-
 (setq nrepl-hide-special-buffers t)
 (setq nrepl-log-messages nil)
 
