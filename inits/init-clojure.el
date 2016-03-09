@@ -66,17 +66,26 @@ Uses the tooling session, with no specified namespace."
 ;; (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
 (setq cider-cljs-repl "(do (require 'figwheel-sidecar.repl-api)
+                           (figwheel-sidecar.repl-api/stop-figwheel!)
                            (figwheel-sidecar.repl-api/start-figwheel!)
                            (figwheel-sidecar.repl-api/cljs-repl))")
+
+(defun cider-eval (code)
+  (with-current-buffer (cider-current-repl-buffer)
+    (goto-char (point-max))
+    (insert code)
+    (cider-repl-return)))
 
 ;; manual starting cljs repl from nrepl session
 (defun cider-figwheel-repl ()
   (interactive)
   (save-some-buffers)
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert cider-cljs-repl)
-    (cider-repl-return)))
+  (cider-eval cider-cljs-repl))
+
+(defun cider-cljs-quit ()
+  (interactive)
+  (save-some-buffers)
+  (cider-eval ":cljs/quit"))
 
 (defun cider-clear-output-all-repls ()
   (interactive)
@@ -92,5 +101,6 @@ Uses the tooling session, with no specified namespace."
 (global-set-key (kbd "C-c M-o") #'cider-clear-output-all-repls)
 
 (global-set-key (kbd "C-c f r") #'cider-figwheel-repl)
+(global-set-key (kbd "C-c f q" ) #'cider-cljs-quit)
 
 (provide 'init-clojure)
