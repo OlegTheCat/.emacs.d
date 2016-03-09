@@ -20,6 +20,7 @@
 (add-hook 'cider-repl-mode-hook #'projectile-mode)
 
 (setq cider-show-error-buffer t)
+(setq cider-repl-display-help-banner nil)
 (setq nrepl-log-messages t)
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
