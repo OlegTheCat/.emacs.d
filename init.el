@@ -65,6 +65,7 @@
 (package-install-if-not-present 'markdown-mode)
 (package-install-if-not-present 'magit)
 (require-package 'git-link)
+(setq git-link-use-commit t)
 
 (require-package 'aggressive-indent)
 (require-package 'hydra)
