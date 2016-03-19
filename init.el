@@ -99,6 +99,7 @@
 (require 'init-haskell)
 (require 'init-elixir)
 (require 'init-html)
+(require 'init-js)
 
 (load custom-file 'noerror)
 
