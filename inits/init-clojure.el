@@ -23,7 +23,7 @@
 (setq cider-repl-display-help-banner nil)
 (setq nrepl-log-messages t)
 
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'eldoc-mode)
 
 (modify-syntax-entry ?- "w" clojure-mode-syntax-table)
 (modify-syntax-entry ?* "w" clojure-mode-syntax-table)
