@@ -88,6 +88,18 @@ Uses the tooling session, with no specified namespace."
   (save-some-buffers)
   (cider-eval ":cljs/quit"))
 
+(defun cider-reloaded-reset ()
+  (interactive)
+  (cider-eval "(reloaded.repl/reset)"))
+
+(defun cider-reloaded-go ()
+  (interactive)
+  (cider-eval "(reloaded.repl/go)"))
+
+(defun cider-reloaded-stop ()
+  (interactive)
+  (cider-eval "(reloaded.repl/stop)"))
+
 (defun cider-clear-output-all-repls ()
   (interactive)
   (let ((origin-buffer (current-buffer))
@@ -103,5 +115,9 @@ Uses the tooling session, with no specified namespace."
 
 (global-set-key (kbd "C-c f r") #'cider-figwheel-repl)
 (global-set-key (kbd "C-c f q" ) #'cider-cljs-quit)
+
+(global-set-key (kbd "C-c r r" ) #'cider-reloaded-reset)
+(global-set-key (kbd "C-c r g" ) #'cider-reloaded-go)
+(global-set-key (kbd "C-c r s" ) #'cider-reloaded-stop)
 
 (provide 'init-clojure)
