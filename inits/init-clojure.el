@@ -39,6 +39,7 @@
                                (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 (setq cljr-magic-requires :prompt)
+(setq cljr-favor-prefix-notation nil)
 
 (define-key clojure-mode-map (kbd "C-;") 'cljr-cycle-coll)
 
