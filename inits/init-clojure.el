@@ -67,11 +67,6 @@ Uses the tooling session, with no specified namespace."
 ;; Disabled due to heavy lag
 ;; (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 
-(setq cider-cljs-repl "(do (require 'figwheel-sidecar.repl-api)
-                           (figwheel-sidecar.repl-api/stop-figwheel!)
-                           (figwheel-sidecar.repl-api/start-figwheel!)
-                           (figwheel-sidecar.repl-api/cljs-repl))")
-
 (defun cider-eval (code)
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
@@ -82,7 +77,10 @@ Uses the tooling session, with no specified namespace."
 (defun cider-figwheel-repl ()
   (interactive)
   (save-some-buffers)
-  (cider-eval cider-cljs-repl))
+  (cider-eval "(do (require 'figwheel-sidecar.repl-api)
+                   (figwheel-sidecar.repl-api/stop-figwheel!)
+                   (figwheel-sidecar.repl-api/start-figwheel!)
+                   (figwheel-sidecar.repl-api/cljs-repl))"))
 
 (defun cider-cljs-quit ()
   (interactive)
