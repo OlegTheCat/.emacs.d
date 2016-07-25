@@ -50,11 +50,6 @@
 
 (add-hook 'cider-mode-hook #'flycheck-mode)
 
-(defun cider-flycheck-eval (input callback)
-  "Send the request INPUT and register the CALLBACK as the response handler.
-Uses the tooling session, with no specified namespace."
-  (nrepl-request:eval input callback (cider-current-connection) (nrepl-current-tooling-session)))
-
 (setq nrepl-hide-special-buffers t)
 (setq nrepl-log-messages nil)
 
