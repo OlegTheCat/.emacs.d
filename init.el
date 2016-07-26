@@ -98,6 +98,7 @@
 (require 'init-ido)
 (require 'init-haskell)
 (require 'init-elixir)
+(require 'init-python)
 (require 'init-html)
 (require 'init-js)
 
