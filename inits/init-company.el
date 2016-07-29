@@ -1,7 +1,7 @@
 (require-package 'company)
 (require-package 'company-quickhelp)
 
-(global-set-key (kbd "C-x C-o") 'company-complete)
+(global-set-key (kbd "M-SPC") 'company-complete)
 
 (setq company-idle-delay nil)
 
