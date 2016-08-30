@@ -40,6 +40,7 @@
 
 (setq cljr-magic-requires :prompt)
 (setq cljr-favor-prefix-notation nil)
+(setq cljr-auto-clean-ns nil)
 
 (define-key clojure-mode-map (kbd "C-;") 'cljr-cycle-coll)
 
