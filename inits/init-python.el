@@ -8,4 +8,6 @@
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'company-mode)
 
+(define-key anaconda-mode-map (kbd "M-,") 'anaconda-mode-go-back)
+
 (provide 'init-python)
