@@ -67,6 +67,8 @@
 (require-package 'git-link)
 (setq git-link-use-commit t)
 
+(require-package 'github-browse-file)
+
 (require-package 'aggressive-indent)
 (require-package 'hydra)
 (require-package 'string-edit)
