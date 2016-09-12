@@ -99,6 +99,7 @@
 (require 'init-org)
 (require 'init-ido)
 (require 'init-haskell)
+(require 'init-sml)
 (require 'init-elixir)
 (require 'init-python)
 (require 'init-html)
