@@ -96,6 +96,7 @@
 (require 'init-common-lisp)
 (require 'init-paredit)
 (require 'init-c)
+(require 'init-go)
 (require 'init-org)
 (require 'init-ido)
 (require 'init-haskell)
