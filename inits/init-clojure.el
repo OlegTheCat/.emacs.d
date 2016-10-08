@@ -115,4 +115,10 @@
 (global-set-key (kbd "C-c r g" ) #'cider-reloaded-go)
 (global-set-key (kbd "C-c r s" ) #'cider-reloaded-stop)
 
+(require-package 'eval-in-repl)
+
+(require 'eval-in-repl-cider)
+(define-key clojure-mode-map (kbd "<C-return>") 'eir-eval-in-cider)
+
+
 (provide 'init-clojure)
