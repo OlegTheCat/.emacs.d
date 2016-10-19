@@ -80,6 +80,8 @@
 (persp-mode)
 (require 'persp-projectile)
 
+(windmove-default-keybindings)
+
 (defun projectile-manually-add-known-project (project-root)
   (interactive "D")
   (projectile-add-known-project project-root))
