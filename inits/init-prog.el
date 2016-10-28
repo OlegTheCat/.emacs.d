@@ -5,7 +5,6 @@
                             (interactive)
                             (setq-local show-trailing-whitespace t)))
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'prog-mode-hook 'yas-minor-mode)
 (add-hook 'prog-mode-hook 'prettify-symbols-mode)
 (add-hook 'prog-mode-hook 'column-number-mode)
 (add-hook 'prog-mode-hook 'projectile-mode)
